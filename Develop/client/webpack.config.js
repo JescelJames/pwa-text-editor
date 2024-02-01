@@ -25,12 +25,14 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new MiniCssExtractPlugin(),
+
       // new GenerateSW(),
       
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
+      
       new WebpackPwaManifest({
         name: 'TextEditor',
         short_name: 'TextEditor',
