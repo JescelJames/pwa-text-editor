@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 // const { GenerateSW } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
@@ -24,7 +25,7 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin',
       }),
-      new MiniCssExtractPlugin(),
+      // new MiniCssExtractPlugin(),
 
       // new GenerateSW(),
       
@@ -34,8 +35,10 @@ module.exports = () => {
       }),
       
       new WebpackPwaManifest({
-        name: 'TextEditor',
-        short_name: 'TextEditor',
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
         description: 'Edit Text!',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
@@ -55,12 +58,12 @@ module.exports = () => {
       rules: [
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          use: ['style-loader', 'css-loader'],
         },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
-        },
+        // {
+        //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        //   type: 'asset/resource',
+        // },
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
@@ -68,6 +71,8 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+
             },
           },
         },
