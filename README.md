@@ -16,9 +16,9 @@ This challenge is to functioning PWA Text Editor
 
 - Repository Link: https://github.com/JescelJames/pwa-text-editor
 
-- Video Link:
+- Video Link: 
 
-- Deployed Link:
+- Deployed Link: https://dry-plateau-08252-acb38e3a57c4.herokuapp.com/
 
 ### What I learned:
 
