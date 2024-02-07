@@ -12,6 +12,10 @@ This challenge is to functioning PWA Text Editor
 
 ### Video Demonstration
 
+
+https://github.com/JescelJames/pwa-text-editor/assets/105643185/f79bf22e-59df-4476-8cef-2af2eab45636
+
+
 ### Links to the application.
 
 - Repository Link: https://github.com/JescelJames/pwa-text-editor
