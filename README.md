@@ -47,7 +47,8 @@ This challenge is to functioning PWA Text Editor
       on left side-bar go to:
         Storage
          > IndexedDB
-            >
+            > jate
+                > jate
       
     ```
 
